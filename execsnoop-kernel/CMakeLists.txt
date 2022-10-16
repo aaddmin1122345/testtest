@@ -1,0 +1,15 @@
+# find libbpf
+if (build_static)
+    find_library(LIBBPF libbpf.a REQUIRED)
+else()
+    find_library(LIBBPF bpf REQUIRED)
+endif()
+
+if (build_execsnoop_dl)
+    add_library(execsnoop MODULE execsnoop_share.cpp)
+    install(TARGETS execsnoop DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/cgproxy/)
+    target_link_libraries(execsnoop PRIVATE ${LIBBPF} -lelf -lz)
+else()
+    add_library(execsnoop STATIC execsnoop_share.cpp)
+    target_link_libraries(execsnoop PRIVATE ${LIBBPF} -l:libelf.a -l:libz.a)
+endif()

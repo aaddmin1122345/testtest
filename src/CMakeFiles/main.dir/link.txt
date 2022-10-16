@@ -1,0 +1,1 @@
+/usr/bin/c++ -O3 -DNDEBUG CMakeFiles/main.dir/main.cpp.o CMakeFiles/main.dir/common.cpp.o CMakeFiles/main.dir/config.cpp.o CMakeFiles/main.dir/cgroup_attach.cpp.o CMakeFiles/main.dir/socket_client.cpp.o CMakeFiles/main.dir/socket_server.cpp.o -o cgproxy  -ldl -lpthread 

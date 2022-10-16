@@ -1,0 +1,3 @@
+# Hashes of file build rules.
+ccd2f6934cb48d1b5971dca85ad522ff CMakeFiles/man
+2972ff8015e8a5c0d8a78576f59e92b9 man/cgproxyd.1.gz

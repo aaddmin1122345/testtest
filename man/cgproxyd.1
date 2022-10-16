@@ -1,0 +1,54 @@
+.\" Manpage for cgproxyd
+.TH man 1 "19 May 2020" "1.0" "cgproxyd man page"
+.SH NAME
+cgproxyd \- Start a daemon with unix socket to accept control from cgproxy/cgnoproxy
+.SH SYNOPSIS
+cgproxyd [--help] [--debug] [--execsnoop]
+.SH ALIAS
+cgproxyd = cgproxy --daemon
+.SH OPTIONS
+.B  --execsnoop
+enable execsnoop to support program level proxy, need bcc installed to actually work
+.SH CONFIGURATION
+.I /etc/cgproxy/config.json
+.br
+.B port 
+tproxy listenning port
+.br
+program level proxy controll, only work when execsnoop enabled:
+.br
+.RS
+.B program_proxy
+program need to be proxied
+.br
+.B program_noproxy
+program that won't be proxied
+.RE
+.br
+cgroup level proxy control:
+.br
+.RS
+.B cgroup_noproxy
+cgroup array that no need to proxy, /noproxy.slice is preserved.
+.br
+.B cgroup_proxy
+cgroup array that need to proxy, /proxy.slice is preserved.
+.RE
+.br
+.B enable_gateway
+enable gateway proxy for local devices.
+.br
+.B enable_dns
+enable dns to go to proxy.
+.br
+.B enable_tcp
+.br
+.B enable_udp
+.br
+.B enable_ipv4 
+.br
+.B enable_ipv6
+.br
+.SH SEE ALSO
+cgproxyd(1), cgproxy(1), cgnoproxy(1)
+

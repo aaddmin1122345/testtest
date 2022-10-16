@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O3 -DNDEBUG -shared  -o libexecsnoop.so CMakeFiles/execsnoop.dir/execsnoop_share.cpp.o  /usr/lib/libbpf.so -lelf -lz 

@@ -1,0 +1,11 @@
+/usr/bin/cgproxy
+/usr/lib/cgproxy/libexecsnoop.so
+/usr/bin/cgproxyd
+/usr/bin/cgnoproxy
+/usr/share/cgproxy/scripts/cgroup-tproxy.sh
+/usr/lib/systemd/system/cgproxy.service
+/etc/cgproxy/config.json
+/usr/share/doc/cgproxy/readme.md
+/usr/share/man/man1/cgproxyd.1.gz
+/usr/share/man/man1/cgproxy.1.gz
+/usr/share/man/man1/cgnoproxy.1.gz

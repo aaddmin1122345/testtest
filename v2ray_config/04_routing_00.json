@@ -1,0 +1,54 @@
+{
+  "routing": {
+    "domainStrategy": "IPIfNonMatch",
+    "rules": [
+      {
+        "domain": [
+          "geosite:category-ads-all"
+        ],
+        "outboundTag": "outBound_BLACKHOLE",
+        "type": "field"
+      },
+      {
+        "inboundTag": [
+          "inbound_API"
+        ],
+        "outboundTag": "API",
+        "type": "field"
+      },
+      {
+        "outboundTag": "dns-out",
+        "port": "53",
+        "type": "field"
+      },
+      {
+        "domain": [
+          "geosite:google",
+          "geosite:github",
+          "geosite:netflix",
+          "geosite:steam",
+          "geosite:telegram",
+          "geosite:tumblr",
+          "geosite:bbc"
+        ],
+        "outboundTag": "outBound_PROXY",
+        "type": "field"
+      },
+      {
+        "domain": [
+          "geosite:cn"
+        ],
+        "outboundTag": "outBound_DIRECT",
+        "type": "field"
+      },
+      {
+        "ip": [
+          "geoip:cn",
+          "geoip:private"
+        ],
+        "outboundTag": "outBound_DIRECT",
+        "type": "field"
+      }
+    ]
+  }
+}
